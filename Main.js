@@ -13,7 +13,7 @@ function createWindow() {
   win.loadURL(`file://${__dirname}/app/gui/Login.html`);
 
   // Open the DevTools.
-  //win.webContents.openDevTools();
+  win.webContents.openDevTools();
 
   win.setMenuBarVisibility(false);
 
