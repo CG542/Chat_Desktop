@@ -2,16 +2,18 @@
   "name": "your-app",
   "version": "0.1.0",
   "main": "Main.js",
-  
   "Dependencies": {
     "electron-packager": "^8.5.0",
     "electron-prebuilt": "^1.4.13"
   },
-   "devDependencies": {
+  "devDependencies": {
+    "asar": "^0.13.0",
     "electron-packager": "^8.5.0",
-    "electron-prebuilt": "^1.4.13"
+    "electron-prebuilt": "^1.4.13",
+    "electron-rebuild": "^1.5.6"
   },
   "scripts": {
-    "start": "electron ."
+    "start": "electron . --platform=win32 --arch=ia32",
+    "packexe": "electron-packager . Chat --platform=win32 --arch=ia32 --asar true"
   }
 }

@@ -54,7 +54,7 @@ ipc.on('login-success', function () {
   win.loadURL(`file://${__dirname}/app/gui/Frame.html`);
 
     // Open the DevTools.
-    //win.webContents.openDevTools();
+    win.webContents.openDevTools();
 
   win.setMenuBarVisibility(false);
 
