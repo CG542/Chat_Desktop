@@ -5,16 +5,25 @@
 const electron = require('electron');
 const ipc = electron.ipcRenderer;
 
-const addon=require('../../addon/addon');
+const sql_addon=require('../../addon/sqlite3/sqlite3');
 //
 
 verify=function (name,psw) {
     console.log('Verify name and password');
-    console.log(addon.hello());
+    var db = new sql_addon.Database('e:\\test.db');
+
+    db.all("SELECT * from testtable", function(err, rows) {
+        rows.forEach(function (row) {
+            console.log(row.id + ": "+row.name);
+        });
+
+    });
+
+
     var result = true;
-    console.log(addon.hello());
+
     if(result){
-        ipc.send('login-success');
+        //ipc.send('login-success');
     }
     return result;
 };
